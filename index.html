@@ -9,19 +9,30 @@
 </head>
 <body >
 <main class="main">
+
     <h1>
-        Check space x rockets and launches
+        Check SpaceX rockets and launches
     </h1>
     <section class="left">
         <div class="buttons">
-            <button type="button" name="next" data-request="launches/next">Next launch</button>
-            <button  type="button" name="past" data-request="launches/past">Get past launches</button>
-            <button type="button" name="rockets" data-request="rockets">Get all rockets</button>
+            <button type="button" name="next" data-request="launches/next">
+                <img src="./imgs/next.svg" alt="">
+                Next launch
+            </button>
+
+            <button  type="button" name="past" data-request="launches/past">
+                <img src="./imgs/launches.svg" alt="">
+                Get past launches
+            </button>
+
+            <button type="button" name="rockets" data-request="rockets">
+                <img src="./imgs/rockets.svg" alt="">
+                Get all rockets
+            </button>
         </div>
     </section>
 
     <section class="right">
-        <h2 class="title" id="listTitle">Select...</h2>
         <ul id="output" class="output">
 
         </ul>
@@ -33,6 +44,8 @@
 
 
 
-<script src="app.js"></script>
+<!--<script src="app.js"></script>-->
+<script src="shared.js"></script>
+<script src="index.js"></script>
 </body>
 </html>

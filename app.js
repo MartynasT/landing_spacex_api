@@ -7,15 +7,46 @@ document.addEventListener('DOMContentLoaded', () => {
     let data = [];
     let item= [];
 
-    document.querySelector('.buttons').addEventListener('click', event=>{
-      if (event.target.nodeName === "BUTTON" ) {
-        const request = event.target.dataset.request;
-        const state = event.target.name
-        makeApiRequest(request, state);
-        clearHtml();
-      }
-    });
+    // document.querySelector('.buttons').addEventListener('click', event=>{
+    //   console.log(event.path[1])
+    //   if (event.target.nodeName === "BUTTON" || event.path[1]) {
+    //     const request = event.target.dataset.request;
+    //     const state = event.target.name
+    //     makeApiRequest(request, state);
+    //     clearHtml();
+    //   }
+    // });
+    const buttons =  document.querySelectorAll('.buttons button');
 
+    buttons.forEach((button)=>{
+      button.addEventListener('click', ()=>{
+        const request = button.dataset.request;
+        const state = button.name
+        makeApiRequest(request, state);
+        drawInfoModal();
+        clearHtml();
+      })
+    })
+
+
+    function drawInfoModal(){
+      const main = document.querySelector('.main');
+      const fullModal = document.createElement('div');
+      fullModal.classList.add('infoModal');
+
+      const listWrapper = document.createElement('div');
+      listWrapper.classList.add('list-Wrapper');
+      setTimeout(()=>{
+        listWrapper.classList.add('active');
+      }, 100)
+
+      const listHolder = document.createElement('ul');
+      listHolder.classList.add('list-holder');
+
+      main.appendChild(fullModal);
+      fullModal.appendChild(listWrapper);
+      listWrapper.appendChild(listHolder);
+    }
 
     function makeApiRequest(info, state){
       fetch(`https://api.spacexdata.com/v4/${info}`)
@@ -74,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderList(data, swithSate){
-      const output = document.getElementById('output');
+      // const output = document.getElementById('output');
+      const output = document.querySelector('.list-holder');
       output.innerHTML = '';
 
       data.forEach(item=>{
@@ -267,3 +299,9 @@ function clearHtml(){
   outputDiv.innerHTML ='';
   output.innerHTML ='';
 }
+
+document.addEventListener('click', function(event) {
+  if(event.target.className == 'infoModal'){
+    document.querySelector('.infoModal').remove();
+  }
+}, false);
