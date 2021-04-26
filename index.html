@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space API</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+<main class="main">
+    <h1>
+        Check space x rockets and launches
+    </h1>
+    <section class="left">
+        <div class="buttons">
+            <button type="button" name="next" data-request="launches/next">Next launch</button>
+            <button  type="button" name="past" data-request="launches/past">Get past launches</button>
+            <button type="button" name="rockets" data-request="rockets">Get all rockets</button>
+        </div>
+    </section>
+
+    <section class="right">
+        <h2 class="title" id="listTitle">Select...</h2>
+        <ul id="output" class="output">
+
+        </ul>
+        <div id="outputDiv" class="outputWrapper">
+
+        </div>
+    </section>
+</main>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>

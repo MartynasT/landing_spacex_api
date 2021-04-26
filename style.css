@@ -1,0 +1,185 @@
+*, *:before, *:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif, monospace;
+    min-height: 100vh;
+    background-color: #212121;
+    /*background-color: #000D1F;*/
+    color: #fff;
+}
+
+.main,
+.singlePage{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1250px;
+    margin: 0 auto;
+    height: 100%;
+    padding-top: 100px;
+}
+
+.main h1{
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+
+
+.main .left,
+.main .right{
+    width: 50%;
+    height: 100%;
+}
+
+.main .left{
+    padding-right: 48px;
+}
+.buttons{
+    padding: 40px;
+    text-align: center;
+    /*border: 2px solid #fff;*/
+    /*border-radius: 8px;*/
+}
+
+.buttons button{
+    display: inline-block;
+    width: 50%;
+    font-size: 18px;
+    padding: 16px;
+    margin-bottom: 32px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-weight: 600;
+
+    color: #212121;
+    background-color: #fff;
+    transition: all 250ms ease-in-out;
+}
+
+.buttons button:hover{
+    color: #fff;
+    background: none;
+}
+
+.main .right{
+    padding-left: 40px;
+}
+
+.title{
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.output li{
+    list-style: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.output li:before{
+    content: '🚀';
+}
+
+.output p{
+    display: inline-block;
+    position: relative;
+    padding-bottom: 8px;
+    margin-left: 8px;
+}
+.output p:before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    content: '';
+    background-color: #fff;
+    transition: width 250ms ease-in-out ;
+}
+
+.output li:hover p:before{
+    width: 100%;
+}
+
+.outputWrapper p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.outputWrapper h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/*SINGLE ITEM PAGE*/
+.singlePage .info,
+.singlePage .gallery{
+    width: 50%;
+    height: 100%;
+}
+
+button:disabled{
+    opacity: 0.2;
+    cursor: no-drop;
+}
+
+.info{
+    padding-right: 48px;
+}
+
+.info p {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.info h1{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.gallery{
+    width: 100%;
+    padding-left: 48px;
+}
+
+.gallery img{
+    max-width: 100%;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.other-imgs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.other-imgs img{
+    width: calc(33.33% - 30px);
+    height: 100px;
+    object-fit: cover;
+    margin-right: 45px;
+    cursor: pointer;
+    transition: opacity 250ms ease-in-out;
+}
+
+.other-imgs img:hover{
+    opacity: 0.5;
+}
+
+.other-imgs img:nth-of-type(3n + 3){
+    margin-right: 0;
+}
+
+
