@@ -79,33 +79,34 @@ function renderList(data, swithSate){
 }
 
 function showNextLaunch(infoAboutNextLaunch){
-  const {name, date_utc, details, flight_number, date_unix} = infoAboutNextLaunch;
-  // const outputDiv = document.getElementById('outputDiv');
+  const {name, details, flight_number, date_unix} = infoAboutNextLaunch;
   const outputDiv = document.querySelector('.list-Wrapper');
-  outputDiv.classList.add('outputWrapper')
-  const h2 = createCustomElementWithContent('h2', name);
-  outputDiv.appendChild(h2);
-
-  const time = createCustomElementWithContent('p', 'Launch time: ');
-  const spanTime = document.createElement('span');
-
+  outputDiv.classList.add('outputWrapper');
 
   const launchDate = timeConverter(date_unix);
 
-  spanTime.textContent =  launchDate;
-
-  outputDiv.appendChild(time);
-  time.appendChild(spanTime);
-
-  const flightNumber = createCustomElementWithContent('p', `Flight number: ${flight_number}`);
-  outputDiv.appendChild(flightNumber);
-
-  const description = document.createElement('p');
-  description.textContent = details;
-
-  outputDiv.appendChild(description);
+  const tagsArray = [['p', 'span'],'h2', 'p', 'p' ];
+  const dataArray = [ ['Launch time: ', launchDate], name, `Flight number: ${flight_number}`, details];
+  // const h2 = createCustomElementWithContent('h2', name);
+  // outputDiv.appendChild(h2);
+  createAndAppendItemsWithData(outputDiv, tagsArray, dataArray);
 
 
+
+  // const time = createCustomElementWithContent('p', 'Launch time: ');
+  // const spanTime = document.createElement('span');
+  // const launchDate = timeConverter(date_unix);
+  // spanTime.textContent =  launchDate;
+  // outputDiv.appendChild(time);
+  // time.appendChild(spanTime);
+
+  // const flightNumber = createCustomElementWithContent('p', `Flight number: ${flight_number}`);
+  // outputDiv.appendChild(flightNumber);
+
+  // const description = document.createElement('p');
+  // description.textContent = details;
+
+  // outputDiv.appendChild(description);
 }
 
 function getSpecificItemDataFromApi(id, switchState){
@@ -124,7 +125,6 @@ function getSpecificItemDataFromApi(id, switchState){
   .then(json=>{
     item = json;
     console.log(item);
-    // const toStorage = [JSON.stringify(item), switchState];
     const toStorage = [item, switchState];
     localStorage.setItem('item', JSON.stringify(toStorage) );
     window.location.href = "single.html";
@@ -145,5 +145,29 @@ function clearHtml(){
   output.innerHTML ='';
 }
 
+
+function createAndAppendItemsWithData(parent, arrayItems, arrayData){
+  arrayItems.forEach((tag, index)=>{
+    let laikinas;
+    console.log(tag);
+    console.log(index);
+    if (tag.isArray){
+
+
+      tag.forEach((secondItem, secondIndex)=>{
+        // const secondTag = document.createElement(secondItem);
+        // secondTag.innerText = arrayData[index][secondIndex];
+        // laikinas= secondTag;
+        console.log(secondItem)
+      })
+    }else{
+      const item = document.createElement(tag);
+      item.textContent = arrayData[index];
+      parent.appendChild(item);
+
+    }
+    // console.log(laikinas)
+  })
+}
 
 
