@@ -21,3 +21,19 @@ body{
     padding-top: 48px;
     padding-bottom: 40px;
 }
+
+
+@media screen and (max-width: 1300px){
+    .main,
+    .singlePage{
+        padding: 48px;
+    }
+}
+
+
+@media screen and (max-width: 540px){
+    .main,
+    .singlePage{
+        padding: 24px;
+    }
+}

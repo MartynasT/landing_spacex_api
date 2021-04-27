@@ -10,7 +10,6 @@ buttons.forEach((button)=>{
     const state = button.name
     makeApiRequest(request, state);
     drawInfoModal();
-    clearHtml();
   })
 })
 
@@ -27,6 +26,18 @@ function drawInfoModal(){
 
   main.appendChild(fullModal);
   fullModal.appendChild(listWrapper);
+
+  const closeModalBtn = document.createElement('button');
+  closeModalBtn.classList.add('closeBtn');
+  closeModalBtn.textContent = 'Close  ❌';
+  fullModal.appendChild(closeModalBtn)
+
+  closeModalBtn.addEventListener('click', ()=>{
+    setTimeout(()=>{
+      fullModal.remove();
+    }, 250)
+    listWrapper.classList.remove('active');
+  });
 }
 
 function makeApiRequest(info, state){
@@ -115,6 +126,11 @@ function getSpecificItemDataFromApi(id, switchState){
 
 document.addEventListener('click', function(event) {
   if(event.target.className === 'infoModal'){
-    document.querySelector('.infoModal').remove();
+    const modal = document.querySelector('.infoModal');
+    const listWrapper = document.querySelector('.list-Wrapper');
+    setTimeout(()=>{
+      modal.remove();
+    }, 250)
+    listWrapper.classList.remove('active');
   }
 }, false);
