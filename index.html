@@ -2,50 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Space API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 SpaceX API</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body >
-<main class="main">
 
+<main class="main">
     <h1>
         Check SpaceX rockets and launches
     </h1>
-    <section class="left">
+    <section class="content">
         <div class="buttons">
+
             <button type="button" name="next" data-request="launches/next">
-                <img src="./imgs/next.svg" alt="">
+                <img src="./imgs/next.svg" alt="space helmet illustration">
                 Next launch
             </button>
 
             <button  type="button" name="past" data-request="launches/past">
-                <img src="./imgs/launches.svg" alt="">
+                <img src="./imgs/launches.svg" alt="moon with US flag illustration">
                 Get past launches
             </button>
 
             <button type="button" name="rockets" data-request="rockets">
-                <img src="./imgs/rockets.svg" alt="">
+                <img src="./imgs/rockets.svg" alt="rocket illustration">
                 Get all rockets
             </button>
-        </div>
-    </section>
-
-    <section class="right">
-        <ul id="output" class="output">
-
-        </ul>
-        <div id="outputDiv" class="outputWrapper">
 
         </div>
     </section>
 </main>
 
-
-
-<!--<script src="app.js"></script>-->
-<script src="shared.js"></script>
-<script src="index.js"></script>
+<script src="javascript/shared.js"></script>
+<script src="javascript/index.js"></script>
 </body>
 </html>

@@ -56,7 +56,6 @@ function useDataFromApi(data, switchState){
 
 function renderList(data, swithSate){
   const output = document.querySelector('.list-Wrapper');
-
   output.innerHTML = '';
 
   const listHolder = document.createElement('ul');
@@ -85,28 +84,10 @@ function showNextLaunch(infoAboutNextLaunch){
 
   const launchDate = timeConverter(date_unix);
 
-  const tagsArray = [['p', 'span'],'h2', 'p', 'p' ];
-  const dataArray = [ ['Launch time: ', launchDate], name, `Flight number: ${flight_number}`, details];
-  // const h2 = createCustomElementWithContent('h2', name);
-  // outputDiv.appendChild(h2);
+  const tagsArray = ['h2', 'p', 'p', ['p', 'span']];
+  const dataArray = [  name, `Flight number: ${flight_number}`, details, ['Launch time: ', launchDate]];
   createAndAppendItemsWithData(outputDiv, tagsArray, dataArray);
 
-
-
-  // const time = createCustomElementWithContent('p', 'Launch time: ');
-  // const spanTime = document.createElement('span');
-  // const launchDate = timeConverter(date_unix);
-  // spanTime.textContent =  launchDate;
-  // outputDiv.appendChild(time);
-  // time.appendChild(spanTime);
-
-  // const flightNumber = createCustomElementWithContent('p', `Flight number: ${flight_number}`);
-  // outputDiv.appendChild(flightNumber);
-
-  // const description = document.createElement('p');
-  // description.textContent = details;
-
-  // outputDiv.appendChild(description);
 }
 
 function getSpecificItemDataFromApi(id, switchState){
@@ -137,37 +118,3 @@ document.addEventListener('click', function(event) {
     document.querySelector('.infoModal').remove();
   }
 }, false);
-
-function clearHtml(){
-  const outputDiv = document.getElementById('outputDiv');
-  const output = document.getElementById('output');
-  outputDiv.innerHTML ='';
-  output.innerHTML ='';
-}
-
-
-function createAndAppendItemsWithData(parent, arrayItems, arrayData){
-  arrayItems.forEach((tag, index)=>{
-    let laikinas;
-    console.log(tag);
-    console.log(index);
-    if (tag.isArray){
-
-
-      tag.forEach((secondItem, secondIndex)=>{
-        // const secondTag = document.createElement(secondItem);
-        // secondTag.innerText = arrayData[index][secondIndex];
-        // laikinas= secondTag;
-        console.log(secondItem)
-      })
-    }else{
-      const item = document.createElement(tag);
-      item.textContent = arrayData[index];
-      parent.appendChild(item);
-
-    }
-    // console.log(laikinas)
-  })
-}
-
-

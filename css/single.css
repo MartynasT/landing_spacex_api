@@ -1,0 +1,70 @@
+.actions-holder{
+    width: 100%;
+}
+
+.backButton{
+    display: inline-block;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-bottom: 32px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #212121;
+    background-color: #fff;
+    transition: all 250ms ease-in-out;
+    text-decoration: none;
+    position: relative;
+}
+
+.backButton:hover{
+    color: #fff;
+    background: none;
+}
+
+/*SINGLE ITEM PAGE*/
+.singlePage .info,
+.singlePage .gallery{
+    width: 50%;
+    height: 100%;
+}
+
+/*GALLERY*/
+.gallery{
+    width: 100%;
+    padding-left: 48px;
+}
+
+.gallery img{
+    max-width: 100%;
+    display: block;
+    margin-bottom: 40px;
+}
+
+.other-imgs{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.other-imgs img{
+    width: calc(33.33% - 30px);
+    height: 100px;
+    object-fit: cover;
+    margin-right: 45px;
+    cursor: pointer;
+    transition: opacity 250ms ease-in-out;
+}
+
+.other-imgs img:hover{
+    opacity: 0.5;
+}
+
+.other-imgs img:nth-of-type(3n + 3){
+    margin-right: 0;
+}
+
+.message{
+    color: #E94343;
+    font-size: 20px;
+}
