@@ -7,9 +7,14 @@ const buttons =  document.querySelectorAll('.buttons button');
 buttons.forEach((button)=>{
   button.addEventListener('click', ()=>{
     const request = button.dataset.request;
-    const state = button.name
-    makeApiRequest(request, state);
-    drawInfoModal();
+    const state = button.name;
+
+    if (state == 'upcoming') {
+      redirectToUpcomingLaunchesPage();
+    } else {
+      makeApiRequest(request, state);
+      drawInfoModal();
+    }
   })
 })
 
@@ -122,6 +127,10 @@ function getSpecificItemDataFromApi(id, switchState){
     window.location.href = "single.html";
   })
   .catch(err => console.log(err))
+}
+
+function redirectToUpcomingLaunchesPage(){
+  window.location.href = "upcoming.html";
 }
 
 document.addEventListener('click', function(event) {
