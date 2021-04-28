@@ -1,27 +1,6 @@
-.actions-holder{
-    width: 100%;
-}
 
-.backButton{
-    display: inline-block;
-    font-size: 16px;
-    padding: 12px 24px;
-    margin-bottom: 32px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #212121;
-    background-color: #fff;
-    transition: all 250ms ease-in-out;
-    text-decoration: none;
-    position: relative;
-}
 
-.backButton:hover{
-    color: #fff;
-    background: none;
-}
+
 
 /*SINGLE ITEM PAGE*/
 .singlePage .info,

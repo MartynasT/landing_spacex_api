@@ -3,12 +3,35 @@
     margin: 0;
     box-sizing: border-box;
 }
+:root {
+    --dark-color: #313438;
+    --white: #fff;
+    --soft-gray: #EAEAEA;
+
+    --pink: #ffd0ff;
+
+    --text-main: var(--white);
+    --bg-page: var(--dark-color);
+    --text-secondary: var(--dark-color);
+    --border-color: var(--white);
+    --card-bg: var(--white)
+
+}
+body.light-mode{
+    --bg-page: var(--soft-gray);
+    --text-main: var(--dark-color);
+    --border-color: var(--dark-color);
+    --card-bg: var(--dark-color);
+    --text-secondary: var(--white);
+
+    --pink: #a93ea9;
+}
 
 body{
     font-family: 'Ubuntu', sans-serif, monospace;
     min-height: 100vh;
-    background-color: #313438;
-    color: #fff;
+    background-color: var(--bg-page);
+    color: var(--text-main);
 }
 
 .main,
@@ -22,6 +45,68 @@ body{
     padding-bottom: 40px;
 }
 
+.mode-switcher{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switcher{
+    width: 40px;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    position: relative;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+#modeSwitcher{
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
+.switcher-toggle{
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    left: -1px;
+    transition: all 200ms ease;
+}
+.switcher-toggle.light-mode{
+
+}
+
+#modeSwitcher:checked + label .switcher-toggle.light-mode{
+    background-color: var(--border-color);
+    left: 16px;
+}
+
+.actions-holder{
+    width: 100%;
+}
+
+.backButton{
+    display: inline-block;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin-bottom: 32px;
+    border: 2px solid var(--card-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: var(--card-bg);
+    transition: all 250ms ease-in-out;
+    text-decoration: none;
+    position: relative;
+}
+
+.backButton:hover{
+    color: #fff;
+    background: none;
+}
 
 @media screen and (max-width: 1300px){
     .main,

@@ -43,3 +43,33 @@ function createAndAppendItemsWithData(parent, arrayItems, arrayData){
     }
   })
 }
+
+
+const body = document.body;
+const modeSwitcher = document.getElementById('modeSwitcher');
+const switherToggle = document.querySelector('span.switcher-toggle');
+
+modeSwitcher.addEventListener('change', ()=>{
+  body.classList.toggle('light-mode');
+
+  setThemeMode();
+})
+
+function setThemeMode(){
+  const themeState =  document.getElementById('modeSwitcher').checked;
+  if (themeState) {
+    localStorage.setItem('theme', 'light');
+  } else {
+    localStorage.setItem('theme', 'dark');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  const theme = localStorage.getItem('theme');
+  if (theme === 'light') {
+    body.classList.add('light-mode')
+    modeSwitcher.checked = true;
+  }
+
+  switherToggle.classList.toggle('light-mode')
+})
