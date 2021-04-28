@@ -19,7 +19,6 @@ function timeConverter(UNIX_timestamp){
   return time;
 }
 
-
 function createAndAppendItemsWithData(parent, arrayItems, arrayData){
   arrayItems.forEach((tag, index)=>{
     let item;
@@ -43,7 +42,6 @@ function createAndAppendItemsWithData(parent, arrayItems, arrayData){
     }
   })
 }
-
 
 const body = document.body;
 const modeSwitcher = document.getElementById('modeSwitcher');

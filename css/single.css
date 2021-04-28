@@ -1,7 +1,3 @@
-
-
-
-
 /*SINGLE ITEM PAGE*/
 .singlePage .info,
 .singlePage .gallery{
@@ -21,7 +17,6 @@
     line-height: 1.5;
     letter-spacing: 0.5px;
 }
-
 
 /*GALLERY*/
 .gallery{
@@ -83,7 +78,6 @@
 @media screen and (max-width: 540px){
     .other-imgs img{
         height: 100px;
-
         width: calc(50% - 20px);
         margin-right: 40px;
     }

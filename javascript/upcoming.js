@@ -7,8 +7,6 @@ fetch(`https://api.spacexdata.com/v4/launches/upcoming`)
 })
 .catch(err => console.log(err))
 
-
-
 function drawLaunchesToScreen(data){
   console.log(data[0]);
   const launchesOutput = document.getElementById('launchesOutput');
@@ -28,8 +26,5 @@ function drawLaunchesToScreen(data){
 
     createAndAppendItemsWithData(launchWrapper, tagsArray, dataArray);
     launchesOutput.appendChild(launchWrapper);
-
-    console.log('details ', details)
   })
-
 }
