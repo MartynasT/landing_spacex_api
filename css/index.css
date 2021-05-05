@@ -15,6 +15,12 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.buttons:after {
+    width: 30%;
+    content: '';
 }
 
 .buttons button{
@@ -168,6 +174,8 @@
     .buttons{
         flex-wrap: wrap;
     }
+
+
 
     .buttons button{
         width: 47%;

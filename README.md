@@ -12,7 +12,7 @@
 
 
 #### Future tasks:
-
+- [x] Add Starship launch info
 - [ ] Add more information about rockets
 - [ ] Add countdown timer for next launch
 

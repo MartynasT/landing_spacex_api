@@ -11,7 +11,11 @@ buttons.forEach((button)=>{
 
     if (state == 'upcoming') {
       redirectToUpcomingLaunchesPage();
-    } else {
+    }
+    else if (state == 'starship'){
+      window.location.href = "starship.html";
+    }
+    else {
       makeApiRequest(request, state);
       drawInfoModal();
     }
