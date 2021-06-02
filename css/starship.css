@@ -23,6 +23,22 @@
     border-radius: 8px;
 }
 
+.error-holder{
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.error-svg-holder{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.message {
+    color: #E94343;
+    font-size: 20px;
+}
+
 @media screen and (max-width: 768px) {
     .starship-launch{
         width: 100%;

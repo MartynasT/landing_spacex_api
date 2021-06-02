@@ -4,7 +4,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
   .then(json=>{
     data = json;
     // localStorage.setItem('starshp', JSON.stringify(data));
-    getStarshipData(data)
+    // getStarshipData(data)
+    console.log(data)
+    if (data.length >= 1){
+      getStarshipData(data)
+    }else{
+      console.log('something ')
+      showCustomError()
+    }
+
   })
   .catch(err => console.log(err))
 
@@ -19,7 +27,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return item;
       }
     })
-    useStarshipData();
+    if(starshipData.length >= 1){
+      console.log('ok')
+      useStarshipData();
+    }else{
+      console.log('eh')
+      showCustomError();
+    }
+
   }
 
   function useStarshipData(){
@@ -48,3 +63,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     wrapper.appendChild(img)
   }
 })
+
+const showCustomError = () =>{
+  const output = document.querySelector('.main');
+  output.classList.add('error-holder')
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('error-svg-holder')
+  output.appendChild(wrapper);
+
+  const h2 = document.createElement('h2');
+  h2.innerText = 'Sorry, no information about next starship test launch';
+  h2.classList.add('message')
+  const img = document.createElement('img');
+  img.src = './imgs/sattelite.svg';
+
+  wrapper.appendChild(h2);
+  wrapper.appendChild(img);
+}
