@@ -105,9 +105,11 @@ body{
 }
 
 .backButton:hover{
-    color: #fff;
+    color: var(--text-main);
     background: none;
 }
+
+
 
 @media screen and (max-width: 1300px){
     .main,

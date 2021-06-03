@@ -164,6 +164,13 @@
     color: var(--pink);
 }
 
+button.coming-soon{
+    font-size: 32px;
+
+    /*pointer-events: none;*/
+    cursor: not-allowed;
+}
+
 @media screen and (max-width: 768px) {
     .main h1{
         margin-top: 56px;

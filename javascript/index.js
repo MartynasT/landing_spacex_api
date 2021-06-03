@@ -81,7 +81,7 @@ function renderList(data, swithSate){
   const listHolder = document.createElement('ul');
   listHolder.classList.add('list-holder');
   output.appendChild(listHolder);
-
+  data.reverse();
   data.forEach(item=>{
     const li = document.createElement('li');
     const p = document.createElement('p');
