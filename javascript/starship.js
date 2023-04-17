@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // localStorage.setItem('starshp', JSON.stringify(data));
     // getStarshipData(data)
     console.log(data)
-    if (data.results.results >= 1){
+    if (data.results.length >= 1){
       getStarshipData(data)
     }else{
       console.log('something ')
